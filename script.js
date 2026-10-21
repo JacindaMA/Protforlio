@@ -1,4 +1,4 @@
-document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('year')?.replaceChildren(document.createTextNode(new Date().getFullYear()));
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -7,9 +7,6 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.08 });
 
-document.querySelectorAll('.project, .overview-item, .insight-card, .concept-left, .concept-right, .stage, .activation, .system-copy, .system-flow, .budget-strip, .takeaway, .capability-grid > div, .about-copy').forEach((el) => {
-  el.classList.add('reveal');
-  observer.observe(el);
-});
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
