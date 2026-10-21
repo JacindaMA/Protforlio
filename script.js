@@ -9,7 +9,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.12 });
 
-document.querySelectorAll('.project, .case-block, .capability-grid > div, .about-copy').forEach((el) => {
+document.querySelectorAll('.project, .overview-item, .insight-card, .concept-left, .concept-right, .stage, .activation, .system-copy, .system-flow, .budget-strip, .takeaway, .capability-grid > div, .about-copy').forEach((el) => {
   el.classList.add('reveal');
   observer.observe(el);
 });
